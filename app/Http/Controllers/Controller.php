@@ -10,4 +10,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function now(){
+        $a = array_sum(explode(" ", microtime()));
+        $a = floor($a * 1000);
+        return $a;
+    }
 }
